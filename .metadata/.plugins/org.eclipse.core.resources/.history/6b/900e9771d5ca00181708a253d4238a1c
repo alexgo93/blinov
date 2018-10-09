@@ -1,0 +1,20 @@
+
+public class ShortestLongest {
+
+	public static void main(String[] args) {
+		for(int i = 1; i<args.length; i++) {
+			int longest;
+			int longestNumberIndex = 0;
+			longest = args[0].length();
+			if(args[i].length()>longest) {
+				longest = args[i].length();
+				longestNumberIndex = i;
+			}
+			if(i == args.length - 1) {
+				System.out.println(args[longestNumberIndex]);
+			}
+		}
+
+	}
+
+}

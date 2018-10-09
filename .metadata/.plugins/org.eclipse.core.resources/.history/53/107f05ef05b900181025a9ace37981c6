@@ -1,0 +1,41 @@
+import java.util.*;
+public class EvenAndOdd {
+
+	public static void main(String[] args) {
+		System.out.println("¬ведите целые числа ");
+		Scanner scan = new Scanner(System.in);		
+		
+		Integer[] intNumbers = new Integer[5];
+		for(int i=0; i<intNumbers.length; i++) {
+			intNumbers[i] = scan.nextInt();
+		}
+		Integer[] odd = new Integer[intNumbers.length];
+		Integer[] even = new Integer[intNumbers.length];
+		for(int i=0; i<intNumbers.length; i++) {
+			if(intNumbers[i]%2 == 0) {
+				
+				odd[i] = intNumbers[i];
+			} else{
+				
+				even[i] = intNumbers[i];
+			}
+			for(int j=0; j<odd.length; j++) {
+				if(odd[j] == null) {
+					continue;
+				} else {
+				System.out.println(odd[j]);
+				}
+			}
+			
+			for(int b=0; b<even.length; b++) {
+				if(even[b] == null) {
+					continue;
+				} else {
+					System.out.println(even[b]);					
+				}
+
+			}
+		}
+	}
+
+}

@@ -1,0 +1,58 @@
+import java.util.ArrayList;
+
+public class Repeatability {
+
+	public static void main(String[] args) {
+		Integer[] Numbers = new Integer[args.length];
+		int count = 0;
+		ArrayList counts = new ArrayList();
+		for(int i = 0; i<args.length; i++) {	
+			Numbers[i] = Integer.parseInt(args[i]);
+		}
+		
+		
+		/*По очереди будем просматривать все подмножества
+	      элементов массива (0 - последний, 1-последний, 
+	      2-последний,...)*/
+	    for (int i = 0; i < Numbers.length; i++) {
+	        /*Предполагаем, что первый элемент (в каждом
+	           подмножестве элементов) является минимальным */
+	        int min = Numbers[i];
+	        int min_i = i; 
+	        /*В оставшейся части подмножества ищем элемент,
+	           который меньше предположенного минимума*/
+	        for (int j = i+1; j < Numbers.length; j++) {
+	            //Если находим, запоминаем его индекс
+	            if (Numbers[j] < min) {
+	                min = Numbers[j];
+	                min_i = j;
+	            }
+	        }
+	        /*Если нашелся элемент, меньший, чем на текущей позиции,
+	          меняем их местами*/
+	        if (i != min_i) {
+	            int tmp = Numbers[i];
+	            Numbers[i] = Numbers[min_i];
+	            Numbers[min_i] = tmp;
+	        }
+	        
+	     }
+	   /* for(int b = 0; b<Numbers.length; b++) {
+      	System.out.println(Numbers[b] + ";");
+      }*/
+	    
+	    for(int k = 0; k<Numbers.length; k++) {
+	    	if (Numbers[k] == Numbers[k+1]) {
+	    		count+=1;
+	    	} else {
+	    		counts.add(count + ":" + Numbers[k]);
+	    		count = 0;
+	    		
+	    	}
+	    }
+	    for(int b = 0; b<counts.size(); b++) {
+	      	System.out.println(counts.get(b) + ";");
+	      }
+	}
+
+}

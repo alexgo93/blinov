@@ -1,0 +1,15 @@
+
+public class ReversNumbers {
+
+	public static void main(String[] args) {
+		char[] strToArray;
+		
+		for (int i=0; i<args.length;i++) {
+			strToArray = args[i].toCharArray(); // Преобразуем строку str в массив символов (char)
+			 for(int x = 0; x < strToArray.length; x++) {
+		         System.out.println(strToArray[x] + " "); // Для наглядности вставим пробел между индексами
+		      } 
+		}
+	}
+
+}
